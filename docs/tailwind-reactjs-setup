@@ -1,0 +1,101 @@
+===========================================
+/*
+ * Steps for setup:
+ */
+===========================================
+
+1. npm install react --save
+2. npm install react-dom --save
+3. npm install vite --save-dev
+4. npm install @vitejs/plugin-react --save-dev
+
+https://tailwindcss.com/docs/installation
+https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.css
+
+5. Create index.html in the root directory
+    - Add basic html markup
+
+6. Create src folder
+    - Create index.jsx ( vite uses .jsx files )
+    - Add react rendoring to the JSX file:
+
+        import React from "react"
+        import ReactDOM from 'react-dom'
+
+        ReactDOM.render(
+            <React.StrictMode>
+            <h1>Working</h1>
+            </React.StrictMode>,
+            document.getElementById('root')
+        )
+
+7. Add <div id="root"></div>
+
+9. Run `npm run start` and this should work properly.
+
+8. Now, Create App.jsx and add below function
+
+    function App() {
+        return (
+            <h1>Working</h1>
+        )
+    }
+
+    export default App;
+
+9. Import and load this function in reder function:
+
+    import React from "react"
+    import ReactDOM from 'react-dom'
+    import App from './App'
+
+    ReactDOM.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+        document.getElementById('root')
+    )
+
+10. Notice JS error in the frontend
+    - https://share.bsf.io/5zu9q9ep
+
+    To resolve this error
+    - Create new file in root folder called - vite.config.js
+        
+        import { defineConfig } from 'vite'
+        import react from '@vitejs/plugin-react'
+
+        // https://vitejs.dev/config/
+        export default defineConfig({
+            plugins: [react()]
+        })
+
+    run `npm run start` command again and the error should be resolved.
+
+11. Installing tailwind:
+    - npm install tailwindcss postcss autoprefixer --save-dev
+
+12. Create `css` folder in the root directory, inside that create tailwind.css file.
+
+13. Import this CSS in the index.html file
+
+    <link rel="stylesheet" href="/css/tailwind.css">
+
+14. Add `font-bold` CSS to the h1 tag - <h1 className="font-bold">Working</h1>
+
+    This will not work.
+
+    Screenshot - https://share.bsf.io/jkuEkEDP
+
+15. Add below three lines to import CSS from tailwind library
+    Add this in file css/tailwind.css
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    And now the Tailwind CSS should work.
+
+    Screenshot - https://share.bsf.io/BluDADQ0
+
+16. install IntelliSense for VS code editor - https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
