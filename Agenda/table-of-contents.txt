@@ -1,0 +1,10 @@
+Interactive workshop
+
+- Problem Statement
+- Why TailwindCSS?
+- What is TailwindCSS?
+- Setting up Tailwind with ReactJS
+- Core concepts & Customizations
+- TailwindUI & WordPress
+- Practical
+- Questions & Answers
