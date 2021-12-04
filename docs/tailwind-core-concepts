@@ -132,3 +132,56 @@
         screen()
         theme()
         
+
+===========================================
+/*
+ * Customization - https://tailwindcss.com/docs/utility-first
+ */
+===========================================
+
+
+1. Configuration
+
+    tailwind.config.js
+        npx tailwindcss init
+
+    postcss.config.js 
+        npx tailwindcss init -p
+
+    Scaffolding the entire default configuration
+        npx tailwindcss init --full
+
+    https://tailwindcss.com/docs/configuration
+
+2. Theme
+
+    - Override default values Colors, Spacing, Responsive Devices
+
+3. Color
+
+    colors: {
+      gray: colors.coolGray,
+      red: colors.red,
+      purple: colors.emerald,
+      customcolor: colors.black, 
+    },
+
+    gray: {
+        darkest: '#1f2d3d',
+        dark: '#3c4858',
+        DEFAULT: '#c0ccda',
+        light: '#e0e6ed',
+        lightest: '#f9fafc',
+    }
+
+    customcolor {
+        darkest: '#1f2d3d',
+        dark: '#3c4858',
+        DEFAULT: '#c0ccda',
+        light: '#e0e6ed',
+        lightest: '#f9fafc',
+    }
+
+    Override existing colors
+    https://tailwindcss.com/docs/customizing-colors
+
