@@ -4,7 +4,8 @@
  */
 ===========================================
 
-1. npm init
+# npm init
+
 1. npm install react --save
 2. npm install react-dom --save
 3. npm install vite --save-dev
