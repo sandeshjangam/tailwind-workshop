@@ -1,0 +1,134 @@
+===========================================
+/*
+ * Core Concepts - https://tailwindcss.com/docs/utility-first
+ */
+===========================================
+
+
+1. Utility-First:
+
+    - Using utility classes to build custom designs without writing CSS
+    - With Tailwind, you style elements by applying pre-existing classes directly in your HTML.
+    - Example other libraries - Bootstrap, Skeleton, Foundation
+
+
+2. Responsive Design
+
+    - Breakpoint prefix	Minimum width	CSS
+
+    - By default these breakpoints are defined by tailwind CSS:
+
+        sm	640px	@media (min-width: 640px) { ... }
+        md	768px	@media (min-width: 768px) { ... }
+        lg	1024px	@media (min-width: 1024px) { ... }
+        xl	1280px	@media (min-width: 1280px) { ... }
+        2xl	1536px	@media (min-width: 1536px) { ... }
+
+        Eg - md:w-32 lg:w-48
+
+    - Add config tailwind - 
+        theme: {
+            screens: {
+            'sm': '544px',
+            // => @media (min-width: 544px) { ... }
+
+            'md': '768px',
+            // => @media (min-width: 768px) { ... }
+
+            'lg': '1024px',
+            // => @media (min-width: 1024px) { ... }
+            },
+        },
+
+3. Hover, Focus and other states
+    
+    - Add config tailwind - 
+
+        variants: {
+            extend: {
+            padding: ['hover']
+            },
+        },
+
+4. Dark Mode
+    
+    - Add config tailwind - 
+        - darkMode: 'media',
+
+    - CSS Class prefix:
+        - dark:bg-white
+
+5. Adding Base styles
+
+    1. By adding class to HTML to normalize CSS
+        - For example text color overall website needs to be purple
+        - We will add text-purple-500 to <html> tag and it will be applied everywhere.
+
+    2. By adding CSS to tailwind.css file
+
+        @layer base {
+            h2 {
+                @apply font-bold;
+            }
+        }
+
+    3. Using plugin in tailwind config file:
+
+        // tailwind.config.js
+        const plugin = require('tailwindcss/plugin')
+
+        module.exports = {
+            plugins: [
+                plugin(function({ addBase, theme }) {
+                addBase({
+                    'h1': { fontSize: theme('fontSize.2xl') },
+                    'h2': { fontSize: theme('fontSize.xl') },
+                    'h3': { fontSize: theme('fontSize.lg') },
+                })
+                })
+            ]
+        }
+
+
+6. Extracting Components
+
+    - Useful for repeatative elements or markup eg button
+    - Remove redundancy of CSS class
+    - Very helpful in optimization
+
+7. Adding New Utilities
+
+    - Although Tailwind provides all the classes but there are some CSS which is missing. In case, you run into such CSS you can include the CSS using `@layer utilities` function. Practically, this should be very rarely used.
+
+        @layer utilities {
+            .scroll-snap-type {
+                scroll-snap-type: y mandatory;
+            }
+            .scroll-snap-align {
+                scroll-snap-align: start;
+            }
+        }
+
+    - Some other utilities:
+
+        @variants responsive
+        @variants dark
+        @variants hover, focus
+
+8. Functions & Directives
+
+    # Directives:
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        @tailwind screens;
+        @apply
+        @layer
+        @variants
+        @responsive   
+        @screen
+        
+    # Functions:
+        screen()
+        theme()
+        

@@ -44,7 +44,7 @@ https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.css
 
     export default App;
 
-9. Import and load this function in reder function:
+9. Import and load this function in render function:
 
     import React from "react"
     import ReactDOM from 'react-dom'
