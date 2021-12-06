@@ -10,3 +10,12 @@
         @apply bg-gray-900 px-8 py-2 text-gray-50 hover:text-gray-900 hover:bg-gray-50 border-2 border-red-600 m-5;
     }
 }
+
+@layer utilities {
+    .scroll-snap-type {
+        scroll-snap-type: y mandatory;
+    }
+    .scroll-snap-align {
+        scroll-snap-align: start;
+    }
+}

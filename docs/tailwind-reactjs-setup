@@ -4,6 +4,8 @@
  */
 ===========================================
 
+# npm init
+
 1. npm install react --save
 2. npm install react-dom --save
 3. npm install vite --save-dev
@@ -43,7 +45,7 @@ https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.css
 
     export default App;
 
-9. Import and load this function in reder function:
+9. Import and load this function in render function:
 
     import React from "react"
     import ReactDOM from 'react-dom'
